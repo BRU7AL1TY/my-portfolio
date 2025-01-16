@@ -1,0 +1,417 @@
+/* -------------------- FONTY -------------------- */
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('Roboto-Regular.ttf') format('truetype'),
+  url('Roboto-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto Light';
+  src: url('Roboto-Light.ttf') format('truetype'),
+  url('Roboto-Light.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Engravers\' Old English';
+  src: url('EngraversOldEnglishBT-Regular.woff2') format('woff2'),
+  url('EngraversOldEnglishBT-Regular.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* -------------------- GŁÓWNY KONTENER -------------------- */
+
+/* -------------------- ANIMOWANE TŁO -------------------- */
+body {
+  margin: 0;
+  height: 100%;
+  font-family: Roboto, sans-serif;
+
+  /* Gradient z dodatkowymi kolorami */
+  background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 1) 0%,
+          rgba(200, 200, 200, 1) 20%,
+          rgba(100, 100, 100, 1) 40%,
+          rgba(51, 51, 51, 1) 60%,
+          rgba(25, 25, 25, 1) 80%,
+          rgba(0, 0, 0, 1) 100%
+  );
+}
+
+.section {
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: unset;
+}
+
+/* -------------------- SIDEBAR -------------------- */
+
+.sidebar {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar .dot {
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin: 10px 0;
+  background-color: #292C33;
+  mix-blend-mode: difference;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.sidebar .dot:hover {
+  background-color: #b8860b;
+}
+
+.sidebar .dot.active {
+  background-color: #b8860b;
+}
+
+.tooltip {
+  display: none;
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none;
+}
+
+.sidebar .dot:hover .tooltip {
+  display: block;
+  opacity: 1;
+}
+
+/* -------------------- HOME -------------------- */
+
+#home {
+  position: relative;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Engravers\' Old English';
+  font-size: 20vh;
+  font-weight: 500;
+}
+
+.description p {
+  font-size: 1.75em;
+  color: #b8860b;
+}
+
+/* -------------------- ABOUT ME -------------------- */
+
+#aboutme {
+  position: relative;
+  color: #292C33;
+}
+
+h2 {
+  font-family: 'Engravers\' Old English';
+  font-size: 10vh;
+  font-weight: 500;
+  position: absolute;
+  top: 5vh;
+  left: 5vh;
+  margin: 0;
+  padding: 10px;
+}
+
+.aboutme {
+  position: absolute;
+  left: 40%;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10vh;
+}
+
+.aboutme span {
+  text-decoration: none; /* Usuwa podkreślenie */
+  font-family: 'Engravers\' Old English'; /* Używamy tego samego fontu co w linkach */
+  font-size: 3em; /* Ustaw rozmiar tekstu */
+  color: darkgoldenrod; /* Nadaj ten sam kolor co w `.aboutme a` */
+  cursor: pointer; /* Dodaj kursor wskazujący, że element jest klikalny */
+}
+
+.aboutme p {
+  font-family: 'Roboto';
+  font-size: 1.75em;
+}
+
+/* -------------------- PROJECTS -------------------- */
+
+#projects {
+  position: relative;
+  color: #E3DDD5;
+}
+
+.projects {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10vh;
+}
+
+.projects p {
+  font-size: 2.5em;
+  color: #b8860b;
+  margin: 5vh;
+}
+
+/* -------------------- CONTACT -------------------- */
+
+#contact {
+  text-align: center;
+  position: relative;
+  align-items: center;
+  color: #FFFFFF;
+}
+
+h3 {
+  font-family: 'Engravers\' Old English';
+  font-size: 10vh;
+  font-weight: 500;
+  margin: 0;
+  padding: 10px;
+}
+
+p.email {
+  color: #ffffff;
+}
+
+.social-links {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.social-links a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-decoration: none;
+  color: #ffffff;
+  gap: 15px;
+}
+
+.social-text {
+  font-family: 'Engravers\' Old English';
+  font-size: 40px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.contact-form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.contact-form textarea {
+  height: 100px;
+  resize: none;
+}
+
+.contact-form .submit-button {
+  background-color: #b8860b;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.contact-form .submit-button:hover {
+  background-color: #daa520;
+}
+
+.success-message {
+  text-align: center;
+  margin-top: 15px;
+  color: #28a745;
+  font-weight: bold;
+}
+
+/* -------------------- MODAL -------------------- */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 4000;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow-y: auto;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 5000;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.cv-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+.cv-container .header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.cv-container h5 {
+  font-size: 2.5rem;
+  margin: 10px 0;
+  color: #222;
+}
+
+.cv-container h6 {
+  font-family: 'Engravers\' Old English';
+  font-size: 2rem;
+  margin: 10px 0;
+  color: #222;
+}
+
+.cv-container .picture {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.cv-container img {
+  max-width: 15vw;
+  height: auto;
+}
+
+.cv-container p,
+.cv-container ul {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.cv-container .section {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.close-button-fixed {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 2rem;
+  color: #333;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 5000;
+  transition: color 0.3s ease;
+}
+
+.close-button-fixed:hover {
+  color: #dc143c;
+}
+
+body.modal-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+
+/* -------------------- RESPONSYWNOŚĆ -------------------- */
+
+@media (max-width: 768px) {
+  .modal {
+    width: 95vw;
+    padding: 15px;
+  }
+
+  .cv-container h1 {
+    font-size: 2rem;
+  }
+
+  .cv-container img {
+    max-width: 120px;
+  }
+}
